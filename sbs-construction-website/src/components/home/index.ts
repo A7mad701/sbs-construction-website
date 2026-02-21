@@ -1,4 +1,3 @@
-export { HeroSection } from "./HeroSection";
 export { HeroSlider } from "./HeroSlider";
 export { AboutPreview } from "./AboutPreview";
 export { FeaturedEquipment } from "./FeaturedEquipment";

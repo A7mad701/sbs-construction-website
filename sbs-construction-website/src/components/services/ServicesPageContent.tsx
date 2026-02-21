@@ -6,11 +6,11 @@ import { ServiceCard } from "./ServiceCard";
 import { useLanguage } from "@/lib/locale-context";
 
 export function ServicesPageContent() {
-  const { t } = useLanguage();
+  const { t, dir } = useLanguage();
   return (
-    <div className="bg-sbs-gray-900">
+    <div className="bg-sbs-gray-900" dir={dir}>
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-16">
+        <div className="mb-16 text-start">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {t("services.pageTitle")}
           </h1>

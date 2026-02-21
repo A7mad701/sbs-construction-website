@@ -30,10 +30,12 @@ export function ProductImage({ product, sizes, className = "" }: ProductImagePro
     return (
       <div className={`relative aspect-[4/3] overflow-hidden bg-sbs-gray-800 ${className}`.trim()}>
         {src && failed ? (
-          <img
+          <Image
             src={PLACEHOLDER}
             alt={product.name}
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
         ) : (
           <FallbackContent product={product} />

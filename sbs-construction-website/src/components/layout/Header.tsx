@@ -26,20 +26,20 @@ export function Header() {
       >
         {t("common.skipToContent")}
       </a>
-      <nav className="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8 rtl:flex-row-reverse" aria-label="Main navigation">
+      <nav className="mx-auto flex max-w-7xl flex-row items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-white transition-colors hover:text-sbs-orange-400 shrink-0"
+          className="shrink-0 text-xl font-bold tracking-tight text-white transition-colors duration-200 hover:text-sbs-orange-400"
         >
           {siteConfig.shortName}
         </Link>
 
-        <div className="hidden items-center gap-8 lg:flex rtl:flex-row-reverse">
+        <div className="hidden items-center gap-8 lg:flex">
           {Object.entries(navKeys).map(([href, key]) => (
             <Link
               key={href}
               href={href}
-              className="text-sm font-medium text-sbs-gray-300 transition-colors hover:text-sbs-orange-400"
+              className="text-sm font-medium text-sbs-gray-300 transition-colors duration-200 hover:text-sbs-orange-400"
             >
               {t(key)}
             </Link>
@@ -47,7 +47,7 @@ export function Header() {
           <LanguageToggle />
         </div>
 
-        <div className="flex items-center gap-4 rtl:flex-row-reverse lg:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -93,7 +93,7 @@ export function Header() {
                 key={href}
                 href={href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-sbs-gray-300 transition-colors hover:bg-sbs-gray-800 hover:text-sbs-orange-400"
+                className="rounded-lg px-4 py-3 text-sm font-medium text-sbs-gray-300 transition-colors duration-200 hover:bg-sbs-gray-800 hover:text-sbs-orange-400"
               >
                 {t(key)}
               </Link>

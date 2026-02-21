@@ -5,17 +5,18 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/locale-context";
 
 export function AboutPreview() {
-  const { t } = useLanguage();
+  const { t, dir } = useLanguage();
+  const isRtl = dir === "rtl";
   return (
     <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: isRtl ? 30 : -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center text-start"
           >
             <p className="text-sm font-semibold uppercase tracking-widest text-sbs-orange-600">
               {t("about.aboutUs")}
@@ -40,7 +41,7 @@ export function AboutPreview() {
             </Link>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: isRtl ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}

@@ -158,9 +158,12 @@ export const translations = {
     about: {
       aboutUs: "About Us",
       pageTitle: "About",
-      pageDesc: "About page content.",
+      pageDesc: "Hakmi & Abbas Sustainable Building Solutions Co. delivers premium construction equipment and lifting solutions across Jordan and the wider Middle East.",
       trustedPartner: "Trusted Partner in Sustainable Construction",
       sustainableBuildingSolutions: "Sustainable Building Solutions",
+      intro: "With over 25 years of experience, we partner with leading manufacturers including Wolth, Alpha, and Yanmar to supply construction equipment for infrastructure, commercial, and industrial projects.",
+      mission: "Our mission is to empower builders and contractors with reliable equipment, technical expertise, and sustainable solutions that meet the highest standards of quality and environmental responsibility.",
+      values: "We are committed to excellence, innovation, and long-term partnerships. From compactors and rebar machinery to aerial work platforms and concrete equipment, our comprehensive catalog supports projects of every scale.",
     },
     products: {
       catalogTitle: "Equipment Catalog",
@@ -218,7 +221,9 @@ export const translations = {
     },
     projects: {
       pageTitle: "Projects",
-      pageDesc: "Projects page content.",
+      pageDesc: "Our equipment powers infrastructure, commercial, and industrial projects across Jordan and the wider region.",
+      intro: "From road construction and building sites to industrial facilities and sustainable development initiatives, SBS Co. has supplied equipment and support for hundreds of successful projects.",
+      types: "We serve government infrastructure projects, private commercial developments, industrial manufacturing facilities, and green building initiatives. Contact us to discuss your project requirements.",
     },
     errors: {
       pageNotFound: "Page not found",
@@ -383,9 +388,12 @@ export const translations = {
     about: {
       aboutUs: "من نحن",
       pageTitle: "من نحن",
-      pageDesc: "محتوى صفحة من نحن.",
+      pageDesc: "توفر شركة حكمي وعباس لحلول البناء المستدامة معدات بناء وحلول رفع متميزة في الأردن والشرق الأوسط.",
       trustedPartner: "شريك موثوق في البناء المستدام",
       sustainableBuildingSolutions: "حلول البناء المستدامة",
+      intro: "بأكثر من 25 عاماً من الخبرة، نتعاون مع مصنعين رائدين مثل وولث وألفا ويانمار لتوريد معدات البناء لمشاريع البنية التحتية والتجارية والصناعية.",
+      mission: "مهمتنا تمكين البنائين والمقاولين بمعدات موثوقة وخبرة فنية وحلول مستدامة تلبي أعلى معايير الجودة والمسؤولية البيئية.",
+      values: "نلتزم بالتميز والابتكار والشراكات طويلة الأمد. من الضاغطات ومعدات حديد التسليح إلى منصات العمل الجوية ومعدات الخرسانة، يلبي كتالوجنا الشامل مشاريع بكل الأحجام.",
     },
     products: {
       catalogTitle: "كتالوج المعدات",
@@ -442,7 +450,9 @@ export const translations = {
     },
     projects: {
       pageTitle: "المشاريع",
-      pageDesc: "محتوى صفحة المشاريع.",
+      pageDesc: "معداتنا تدعم مشاريع البنية التحتية والتجارية والصناعية في الأردن والمنطقة.",
+      intro: "من بناء الطرق ومواقع البناء إلى المنشآت الصناعية ومبادرات التنمية المستدامة، وفرت SBS معدات ودعماً لمئات المشاريع الناجحة.",
+      types: "نخدم مشاريع البنية التحتية الحكومية والتطويرات التجارية الخاصة والمنشآت الصناعية ومبادرات البناء الأخضر. تواصل معنا لمناقشة متطلبات مشروعك.",
     },
     errors: {
       pageNotFound: "الصفحة غير موجودة",

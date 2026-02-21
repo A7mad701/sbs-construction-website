@@ -1,5 +1,6 @@
-import { Inter } from "next/font/google";
+import { Inter, Cairo } from "next/font/google";
 import { Header, Footer } from "@/components/layout";
+import { DirWrapper } from "@/components/layout/DirWrapper";
 import { LocaleScript } from "@/components/layout/LocaleScript";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { LocaleProvider } from "@/lib/locale-context";
@@ -12,6 +13,12 @@ const inter = Inter({
   display: "swap",
 });
 
+const cairo = Cairo({
+  subsets: ["arabic", "latin"],
+  variable: "--font-cairo",
+  display: "swap",
+});
+
 export const metadata = defaultMetadata;
 
 export default function RootLayout({
@@ -20,17 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html lang="en" dir="ltr" suppressHydrationWarning className={`${inter.variable} ${cairo.variable}`}>
       <head>
         <LocaleScript />
         <OrganizationSchema />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-sbs-gray-900 text-white`}>
+      <body className="font-sans antialiased bg-sbs-gray-900 text-white transition-[font-family] duration-300">
         <LocaleProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main id="main-content" className="flex-1" role="main">
-              {children}
+            <main id="main-content" role="main">
+              <DirWrapper>{children}</DirWrapper>
             </main>
             <Footer />
           </div>

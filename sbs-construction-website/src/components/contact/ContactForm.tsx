@@ -35,8 +35,6 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("submitting");
 
-    console.log("Contact form submission:", formData);
-
     try {
       await new Promise((r) => setTimeout(r, 500));
       setStatus("success");
@@ -47,7 +45,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 text-start">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-sbs-gray-300">

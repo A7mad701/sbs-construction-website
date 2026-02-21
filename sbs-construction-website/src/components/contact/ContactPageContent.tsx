@@ -9,7 +9,7 @@ export function ContactPageContent() {
   return (
     <div className="bg-sbs-gray-900">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-16">
+        <div className="mb-16 text-start">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("contact.title")}
           </h1>
@@ -19,7 +19,7 @@ export function ContactPageContent() {
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 text-start">
             <div className="rounded-2xl border border-sbs-gray-800 bg-sbs-gray-900/50 p-8 lg:p-10">
               <h2 className="text-xl font-semibold text-white">{t("contact.sendMessage")}</h2>
               <p className="mt-2 text-sbs-gray-400">
@@ -31,7 +31,7 @@ export function ContactPageContent() {
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 text-start">
             <div className="rounded-2xl border border-sbs-gray-800 bg-sbs-gray-900/50 p-8">
               <h2 className="text-xl font-semibold text-white">{t("contact.contactInfo")}</h2>
               <address className="mt-6 not-italic">
@@ -40,7 +40,7 @@ export function ContactPageContent() {
                 <p className="mt-4">
                   <a
                     href={`tel:${footerData.phone.replace(/\s/g, "")}`}
-                    className="text-sbs-orange-500 transition-colors hover:text-sbs-orange-400"
+                    className="text-sbs-orange-500 transition-colors duration-200 hover:text-sbs-orange-400"
                   >
                     {footerData.phone}
                   </a>
@@ -48,7 +48,7 @@ export function ContactPageContent() {
                 <p className="mt-2">
                   <a
                     href={`mailto:${footerData.email}`}
-                    className="text-sbs-orange-500 transition-colors hover:text-sbs-orange-400"
+                    className="text-sbs-orange-500 transition-colors duration-200 hover:text-sbs-orange-400"
                   >
                     {footerData.email}
                   </a>

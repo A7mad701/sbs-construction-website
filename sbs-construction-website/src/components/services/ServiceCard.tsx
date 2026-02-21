@@ -14,7 +14,7 @@ const serviceDetailKeys: Record<string, string> = {
 const icons: Record<string, React.ReactNode> = {
   truck: (
     <svg className="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1h-1m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
     </svg>
   ),
   leaf: (
@@ -41,7 +41,7 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, index }: ServiceCardProps) {
-  const { t, tArray } = useLanguage();
+  const { t, tArray, dir } = useLanguage();
   const key = serviceDetailKeys[service.id];
   const title = key ? t(`${key}.title`) : service.title;
   const description = key ? t(`${key}.description`) : service.description;
@@ -49,13 +49,14 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
 
   return (
     <motion.article
+      dir={dir}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      className="rounded-2xl border border-sbs-gray-800 bg-sbs-gray-900 p-8 transition-colors hover:border-sbs-orange-500/30 lg:p-10"
+      className="group rounded-2xl border border-sbs-gray-800 bg-sbs-gray-900 p-8 text-start transition-all duration-300 hover:border-sbs-orange-500/30 hover:shadow-lg hover:shadow-sbs-orange-500/5 lg:p-10"
     >
-      <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-sbs-orange-600/20 text-sbs-orange-500">
+      <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-sbs-orange-600/20 text-sbs-orange-500 transition-all duration-300 group-hover:scale-105 group-hover:bg-sbs-orange-600/30">
         {icons[service.icon]}
       </div>
       <h2 className="mt-6 text-xl font-bold text-white sm:text-2xl">
@@ -64,11 +65,10 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
       <p className="mt-4 text-sbs-gray-400 leading-relaxed">
         {description}
       </p>
-      <ul className="mt-6 space-y-3">
+      <ul className="mt-6 list-disc list-outside space-y-3 ps-5 marker:text-sbs-orange-500">
         {features.map((feature) => (
-          <li key={feature} className="flex items-start gap-3 rtl:flex-row-reverse">
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sbs-orange-500" />
-            <span className="text-sm font-medium text-sbs-gray-300">{feature}</span>
+          <li key={feature} className="text-sm font-medium text-sbs-gray-300">
+            {feature}
           </li>
         ))}
       </ul>

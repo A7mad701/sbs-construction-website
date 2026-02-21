@@ -60,7 +60,7 @@ export function FeaturedEquipment({ products }: FeaturedEquipmentProps) {
                   product={product}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="p-6">
+                <div className="p-6 text-start">
                   <p className="text-xs font-medium text-sbs-orange-500">{product.category}</p>
                   <h3 className="mt-2 font-semibold text-white group-hover:text-sbs-orange-400 transition-colors">
                     {product.name}

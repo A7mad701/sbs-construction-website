@@ -43,7 +43,7 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
           </div>
 
           <div className="lg:col-span-6">
-            <div className="lg:sticky lg:top-24">
+            <div className="lg:sticky lg:top-24 text-start">
               <p className="text-sm font-medium uppercase tracking-wider text-sbs-orange-500">
                 {t(`products.categoriesMap.${product.category}`) || product.category}
               </p>

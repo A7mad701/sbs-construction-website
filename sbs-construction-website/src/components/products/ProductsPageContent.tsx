@@ -9,7 +9,7 @@ export function ProductsPageContent() {
   return (
     <div className="bg-sbs-gray-900">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-12">
+        <div className="mb-12 text-start">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {t("products.catalogTitle")}
           </h1>

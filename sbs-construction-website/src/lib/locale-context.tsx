@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
   useCallback,
 } from "react";
@@ -57,11 +58,23 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
   }, []);
 
+  const prevLocaleRef = useRef<Locale | null>(null);
+
   useEffect(() => {
     if (!mounted) return;
     document.documentElement.lang = locale;
     document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
     setStoredLocale(locale);
+    if (prevLocaleRef.current !== null && prevLocaleRef.current !== locale) {
+      document.body.style.transition = "opacity 0.15s ease";
+      document.body.style.opacity = "0.7";
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.body.style.opacity = "1";
+        });
+      });
+    }
+    prevLocaleRef.current = locale;
   }, [locale, mounted]);
 
   const setLocale = useCallback((newLocale: Locale) => {

@@ -27,7 +27,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           product={product}
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
         />
-        <div className="p-6 text-start rtl:text-end">
+        <div className="p-6 text-start">
           <p className="text-xs font-medium uppercase tracking-wider text-sbs-orange-500">
             {product.category}
           </p>

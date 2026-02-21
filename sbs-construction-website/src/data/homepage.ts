@@ -42,7 +42,7 @@ export const whyChooseItems = [
     id: "wc-3",
     title: "Regional Presence",
     description: "Serving Jordan and the wider Middle East with local support and logistics.",
-    icon: "globe",
+    icon: "map-pin",
   },
   {
     id: "wc-4",

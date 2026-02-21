@@ -32,16 +32,16 @@ const socialIcons: Record<string, React.ReactNode> = {
 };
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, dir } = useLanguage();
 
   return (
-    <footer className="border-t border-sbs-gray-800 bg-sbs-gray-950">
+    <footer className="border-t border-sbs-gray-800 bg-sbs-gray-950" dir={dir}>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-2 rtl:text-end">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
+          <div className="lg:col-span-2 min-w-0 text-start">
             <Link
               href="/"
-              className="text-xl font-bold text-white transition-colors hover:text-sbs-orange-400"
+              className="text-xl font-bold text-white transition-colors duration-200 hover:text-sbs-orange-400"
             >
               {siteConfig.shortName}
             </Link>
@@ -51,7 +51,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="rtl:text-end">
+          <div className="min-w-0 text-start">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-sbs-gray-400">
               {t("footer.contact")}
             </h3>
@@ -61,7 +61,7 @@ export function Footer() {
               <p className="mt-2">
                 <a
                   href={`tel:${footerData.phone.replace(/\s/g, "")}`}
-                  className="transition-colors hover:text-sbs-orange-400"
+                  className="transition-colors duration-200 hover:text-sbs-orange-400"
                 >
                   {footerData.phone}
                 </a>
@@ -69,7 +69,7 @@ export function Footer() {
               <p>
                 <a
                   href={`mailto:${footerData.email}`}
-                  className="transition-colors hover:text-sbs-orange-400"
+                  className="transition-colors duration-200 hover:text-sbs-orange-400"
                 >
                   {footerData.email}
                 </a>
@@ -77,7 +77,7 @@ export function Footer() {
             </address>
           </div>
 
-          <div className="rtl:text-end">
+          <div className="min-w-0 text-start">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-sbs-gray-400">
               {t("footer.quickLinks")}
             </h3>
@@ -86,7 +86,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-sbs-gray-300 transition-colors hover:text-sbs-orange-400"
+                    className="text-sm text-sbs-gray-300 transition-colors duration-200 hover:text-sbs-orange-400"
                   >
                     {t(key)}
                   </Link>
@@ -96,16 +96,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-sbs-gray-800 pt-8 sm:flex-row rtl:sm:flex-row-reverse">
+        <div className="mt-12 flex flex-col items-center justify-between gap-6 border-t border-sbs-gray-800 pt-8 text-center sm:flex-row sm:text-start">
           <p className="text-sm text-sbs-gray-500">
             © {new Date().getFullYear()} {siteConfig.shortName}. {t("footer.rights")}
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-6">
             {footerData.social.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sbs-gray-400 transition-colors hover:text-sbs-orange-400"
+                className="text-sbs-gray-400 transition-colors duration-200 hover:text-sbs-orange-400"
                 aria-label={item.name}
               >
                 {socialIcons[item.icon]}
