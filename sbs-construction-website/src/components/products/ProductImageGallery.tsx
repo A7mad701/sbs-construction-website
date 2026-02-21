@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { Product } from "@/data";
+import { basePath } from "@/lib/base-path";
 
 interface ProductImageGalleryProps {
   product: Product;
@@ -19,7 +20,7 @@ export function ProductImageGallery({ product }: ProductImageGalleryProps) {
       <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-sbs-gray-800 bg-sbs-gray-800">
         {currentImage ? (
           <Image
-            src={currentImage}
+            src={basePath + currentImage}
             alt={product.name}
             fill
             className="object-cover"
@@ -48,7 +49,7 @@ export function ProductImageGallery({ product }: ProductImageGalleryProps) {
               }`}
             >
               <Image
-                src={src}
+                src={basePath + src}
                 alt={`${product.name} - image ${index + 1}`}
                 fill
                 className="object-cover"

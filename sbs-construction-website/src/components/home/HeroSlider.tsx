@@ -7,6 +7,7 @@ import Fade from "embla-carousel-fade";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/locale-context";
+import { basePath } from "@/lib/base-path";
 
 const HERO_IMAGES = [
   "/img/hero/excavator-1.jpg",
@@ -69,7 +70,7 @@ function HeroSliderInner({
             >
               <div className="absolute inset-0">
                 <Image
-                  src={src}
+                  src={basePath + src}
                   alt=""
                   fill
                   className="object-cover"

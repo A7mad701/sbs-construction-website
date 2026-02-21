@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { Product } from "@/data";
+import { basePath } from "@/lib/base-path";
 
 const PLACEHOLDER = "/img/placeholder.jpg";
 
@@ -31,7 +32,7 @@ export function ProductImage({ product, sizes, className = "" }: ProductImagePro
       <div className={`relative aspect-[4/3] overflow-hidden bg-sbs-gray-800 ${className}`.trim()}>
         {src && failed ? (
           <Image
-            src={PLACEHOLDER}
+            src={basePath + PLACEHOLDER}
             alt={product.name}
             fill
             className="object-cover"
@@ -47,7 +48,7 @@ export function ProductImage({ product, sizes, className = "" }: ProductImagePro
   return (
     <div className={`relative aspect-[4/3] overflow-hidden bg-sbs-gray-800 ${className}`.trim()}>
       <Image
-        src={src}
+        src={basePath + src}
         alt={product.name}
         fill
         className="object-cover transition-transform duration-300 group-hover:scale-105"
